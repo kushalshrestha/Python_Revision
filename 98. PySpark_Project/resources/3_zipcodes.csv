@@ -1,0 +1,6 @@
+RecordNumber,Zipcode,ZipCodeType,City,State,LocationType,Lat,Long,Xaxis,Yaxis,Zaxis,WorldRegion,Country,LocationText,Location,Decommisioned,TaxReturnsFiled,EstimatedPopulation,TotalWages,Notes
+1,10001,STANDARD,New York,NY,PRIMARY,40.7128,-74.0060,123,456.78,789.01,NA,US,"New York, NY","(40.7128,-74.0060)",False,50000,211000,50000000,Urban area
+2,90001,STANDARD,Los Angeles,CA,PRIMARY,34.0522,-118.2437,124,457.79,790.02,NA,US,"Los Angeles, CA","(34.0522,-118.2437)",False,60000,380000,75000000,West Coast hub
+3,60601,STANDARD,Chicago,IL,PRIMARY,41.8781,-87.6298,125,458.80,791.03,NA,US,"Chicago, IL","(41.8781,-87.6298)",False,55000,270000,62000000,Midwest city
+4,77001,STANDARD,Houston,TX,PRIMARY,29.7604,-95.3698,126,459.81,792.04,NA,US,"Houston, TX","(29.7604,-95.3698)",False,53000,300000,69000000,Energy capital
+5,85001,STANDARD,Phoenix,AZ,PRIMARY,33.4484,-112.0740,127,460.82,793.05,NA,US,"Phoenix, AZ","(33.4484,-112.0740)",False,51000,220000,58000000,Desert metropolis
