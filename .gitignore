@@ -1,2 +1,5 @@
 venv
 **/.ipynb_checkpoints
+
+**/output/*
+**/98.%20PySpark_Project/spark-warehouse/*
