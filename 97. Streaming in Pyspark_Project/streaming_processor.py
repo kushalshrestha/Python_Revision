@@ -3,11 +3,16 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json, window
 from pyspark.sql.types import StructType, StringType, IntegerType, DoubleType
 
-# Initialize Spark Session
+# Initialize Spark Session with Kafka dependency
+    
 spark = SparkSession.builder \
     .appName("KafkaStructuredStreaming") \
     .config("spark.sql.shuffle.partitions", "3") \
+    .config("spark.jars", "/opt/spark/jars/spark-sql-kafka-0-10_2.12-3.1.1.jar") \
+    .config("spark.driver.extraClassPath", "/opt/spark/jars/spark-sql-kafka-0-10_2.12-3.1.1.jar") \
     .getOrCreate()
+
+
 
 # Define schema for incoming JSON data
 schema = StructType() \
@@ -35,6 +40,17 @@ df_aggregated = df_parsed \
         window(col("timestamp").cast("timestamp"), "5 minutes"),  # 5-minute window
         col("event_type")
     ).count()
+
+# Perform Aggregation - Count Events per Window
+df_aggregated = df_parsed \
+    .withWatermark("timestamp", "10 minutes") \
+    .selectExpr("CAST(timestamp AS TIMESTAMP) as timestamp", "event_type") \
+    .groupBy(
+        window(col("timestamp"), "5 minutes"),  # 5-minute window
+        col("event_type")
+    ).count()
+
+
 
 # Write output to PostgreSQL
 query = df_aggregated.writeStream \
