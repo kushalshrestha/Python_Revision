@@ -5,3 +5,4 @@ venv
 **/98.%20PySpark_Project/spark-warehouse/*
 
 **/98. PySpark_Project/1_CaseStudyOnLargeDataSetProcessing/source/*
+**/98. PySpark_Project/1_CaseStudyOnLargeDataSetProcessing/target/*
