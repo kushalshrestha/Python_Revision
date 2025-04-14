@@ -1,0 +1,37 @@
+/* API Endpoint */
+package com.hmis.controller;
+
+import com.hmis.service.LLMQueryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/query")
+public class QueryController {
+
+    @Autowired
+    private LLMQueryService llmQueryService;
+
+    @PostMapping("/run")
+    public Map<String, Object> runQuery(@RequestParam String userQuery, @RequestParam String startDate) {
+        Map<String, Object> response = new HashMap<>();
+
+        // Step 1: Convert Natural Language to SQL
+        String sqlQuery = llmQueryService.generateSQLFromText(userQuery);
+        if (!llmQueryService.isValidQuery(sqlQuery)) {
+            response.put("error", "Invalid query generated.");
+            return response;
+        }
+
+        // Step 2: Execute Query
+        int result = llmQueryService.executeValidatedQuery(LocalDate.parse(startDate));
+
+        // Step 3: Return Response
+        response.put("query", sqlQuery);
+        response.put("result", result);
+        return response;
+    }
+}

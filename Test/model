@@ -1,0 +1,41 @@
+package com.hmis.model;
+
+import jakarta.persistence.*;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "housing_data")
+public class HousingData {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "client_id")
+    private String clientId;
+
+    @Column(name = "housing_status")
+    private String housingStatus;
+
+    @Column(name = "entry_date")
+    private LocalDate entryDate;
+
+    @Column(name = "exit_date")
+    private LocalDate exitDate;
+
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getClientId() { return clientId; }
+    public void setClientId(String clientId) { this.clientId = clientId; }
+
+    public String getHousingStatus() { return housingStatus; }
+    public void setHousingStatus(String housingStatus) { this.housingStatus = housingStatus; }
+
+    public LocalDate getEntryDate() { return entryDate; }
+    public void setEntryDate(LocalDate entryDate) { this.entryDate = entryDate; }
+
+    public LocalDate getExitDate() { return exitDate; }
+    public void setExitDate(LocalDate exitDate) { this.exitDate = exitDate; }
+}

@@ -1,0 +1,28 @@
+package com.example.hmis.controller;
+
+import com.example.hmis.service.LLMQueryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/query")
+public class QueryController {
+
+    private final LLMQueryService llmQueryService;
+
+    @Autowired
+    public QueryController(LLMQueryService llmQueryService) {
+        this.llmQueryService = llmQueryService;
+    }
+
+    @PostMapping("/generate-sql")
+    public String generateSql(@RequestBody String userQuery) {
+        // For the purpose of this example, let's assume we have a predefined schema
+        Map<String, List<String>> schema = new HashMap<>();
+        schema.put("housing_data", Arrays.asList("id", "housing_status", "entry_date", "exit_date"));
+        schema.put("clients", Arrays.asList("client_id", "first_name", "last_name", "dob"));
+
+        // Call the service to generate SQL
+        return llmQueryService.generateSQLFromText(userQuery, schema);
+    }
+}

@@ -1,0 +1,18 @@
+package com.hmis.repository;
+
+import com.hmis.model.HousingData;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import java.time.LocalDate;
+
+@Repository
+public interface HousingDataRepository extends JpaRepository<HousingData, Long> {
+
+    @Query(value = "SELECT COUNT(*) FROM housing_data WHERE housing_status = 'Housed' AND entry_date >= :startDate", nativeQuery = true)
+    int countNewlyHoused(@Param("startDate") LocalDate startDate);
+}
+
+
+/* JPA Query */

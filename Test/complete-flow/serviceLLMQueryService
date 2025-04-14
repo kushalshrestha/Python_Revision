@@ -1,0 +1,67 @@
+package com.example.hmis.service;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.http.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Service
+public class LLMQueryService {
+
+    @Value("${openai.api.key}")
+    private String openAiApiKey;
+
+    private static final String OPENAI_API_URL = "https://api.openai.com/v1/completions";
+
+    public String generateSQLFromText(String userQuery, Map<String, List<String>> schema) {
+        // Build the prompt with schema details
+        String prompt = buildPrompt(userQuery, schema);
+
+        // Make the request to OpenAI API
+        RestTemplate restTemplate = new RestTemplate();
+
+        // Prepare headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + openAiApiKey);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        // Prepare the request body
+        Map<String, Object> requestBody = new HashMap<>();
+        requestBody.put("model", "gpt-4");
+        requestBody.put("prompt", prompt);
+        requestBody.put("max_tokens", 100);
+
+        // Send the request to OpenAI API
+        HttpEntity<Map<String, Object>> request = new HttpEntity<>(requestBody, headers);
+        ResponseEntity<String> response = restTemplate.exchange(OPENAI_API_URL, HttpMethod.POST, request, String.class);
+
+        // Extract and return the SQL query from OpenAI's response
+        String responseBody = response.getBody();
+        if (responseBody != null && !responseBody.isEmpty()) {
+            // Extract the SQL query part from the response (assuming it's in the response body)
+            return responseBody; // You might need to parse it depending on the actual response format
+        }
+        return "No valid query generated.";
+    }
+
+    // Method to build the prompt with schema details
+    private String buildPrompt(String userQuery, Map<String, List<String>> schema) {
+        StringBuilder prompt = new StringBuilder("Generate an SQL query using the following schema:\n");
+
+        // Append schema details
+        for (Map.Entry<String, List<String>> entry : schema.entrySet()) {
+            prompt.append("Table: ").append(entry.getKey()).append(" (");
+            List<String> columns = entry.getValue();
+            prompt.append(String.join(", ", columns));
+            prompt.append(")\n");
+        }
+
+        // Append the user query
+        prompt.append("Natural Language Query: ").append(userQuery);
+        return prompt.toString();
+    }
+}
