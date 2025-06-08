@@ -1,0 +1,84 @@
+{
+    "header": {
+      "name": "KUSHAL SHRESTHA",
+      "title": "Software Engineer | Data Engineer",
+      "phone": "+1(641) 233-9461",
+      "email": "kushal8work@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/kushal8work",
+      "website": "https://kushalshr.com"
+    },
+    "summary": "Software Engineer with around 9 years of professional experience in designing, developing, and leading highly scalable enterprise applications. Proficient in Java, Spring, Python, Flask, Web API, React, Microsoft SQL Server, Oracle and ETL development. Skilled in analyzing client requirements, planning software architecture, and writing robust code. Proven ability to integrate modules, APIs, and relational and non-relational databases, ensuring accuracy and performance. Proficient in automation, user levels, data layers, stored procedures, and interface design. Well-versed in unit testing and cloud computing with Amazon Web Services. Effective communication skills with cross-functional teams and stakeholders. Familiar with Agile Scrum and test-driven methodologies and industry experience in the US healthcare, government, and travel industry.",
+    "skills": {
+        "Programming Languages": "Java, Python, JavaScript, TypeScript, T-SQL, PL/SQL",
+        "Frameworks / Libraries / API": "Spring (MVC, Boot, JPA, Security, Cloud), Hibernate, Flask, SQLAlchemy, Pandas, NumPy, SpaCy, React, JDBC",
+        "Web": "HTML, HTML5, CSS, jQuery, Bootstrap, Tailwind CSS",
+        "Databases/Big Data": "Microsoft SQL Server, Oracle, MySQL, PostgreSQL, MongoDB, Redis, Cassandra, Snowflake, DynamoDB, RDS/Aurora",
+        "Web Services / Cloud Infrastructure": "REST, SOAP, Microservices, AWS(S3, SNS, SQS, IAM, EC2, Lambda, Cloudwatch, Step Function, IAM, Redshift), Azure, GraphQL",
+        "CI/CD Tools": "Github Actions, Jenkins, Docker, Kubernetes",
+        "Big Data & Distributed Computing": "PySpark, Apache Kafka, Apache Airflow",
+        "Tools": "Power BI, Jupyter Notebook, Papermill, Git, Swagger, JIRA, Trello, New Relic, SonarQube, JSON, XML, Apache Maven, JBoss/WildFly, Apache Tomcat, Prometheus, Grafana, Postman, Docker, JMeter, Vite, Splunk",
+        "Other": "Waterfall, Agile, Scrum, Kanban, TDD, Data Warehousing, Performance Testing, Documentation, Design Patterns, Teamwork, Fast Paced, Code Optimization, Interpersonal skills, Vision, Problem-solving"
+    },
+    "experience": [
+        {
+          "company": "CLACKAMAS COUNTY, Oregon City, OR, US",
+          "duration": "March 2024 – Present",
+          "title": "Senior Systems Project Analyst (Data Warehouse Developer)",
+          "details": [
+            "Led the architectural design and implemented a custom data warehouse to support business intelligence for HUD programs reporting.",
+            "Developed data warehouse using Spring Boot, Python, Flask-RESTful, AWS, and React.js with Tailwind CSS.",
+            "Implemented OAuth 2.0 SSO with MFA and a Python-based data profiling tool using Pandas.",
+            "Built a PySpark deduplication pipeline reducing processing from 3+ hours to under 2 minutes.",
+            "Designed data models in SQL Server for improved Power BI dashboard performance.",
+            "Used Spring JPA Entities, DAOs, DTOs, and annotation-based DI and IoC."
+          ],
+          "tech": "Java, Spring Core, Spring AOP, Python, Flask, OAuth2, AWS, JUnit, Lombok, MS-Excel"
+        },
+        {
+          "company": "BOOKMUNDI APS., Skovlunden, Denmark",
+          "duration": "August 2021 – October 2022",
+          "title": "Senior Software Engineer",
+          "details": [
+            "Led full SDLC and backend architecture for global travel portal using Spring Boot.",
+            "Created analytics pipeline using AWS Glue, Snowflake, improving retention by 8%.",
+            "Developed Python-based NLP destination tagger using SpaCy and AWS S3.",
+            "Automated infra with CloudFormation, deployed via ECS Fargate and Kafka.",
+            "Produced regular booking reports, enhancing stakeholder decision-making."
+          ],
+          "tech": "Java, Spring Boot, Hibernate, MySQL, Redis, Python, SpaCy, Kafka, AWS"
+        },
+        {
+          "company": "COTIVITI INC., South Jordan, UT, US",
+          "duration": "March 2019 – August 2021",
+          "title": "Software Engineer",
+          "details": [
+            "Processed over 100 vendor datasets in the US healthcare system.",
+            "Built Spring MVC REST API with secure authentication and exception handling.",
+            "Mapped Oracle data models via Hibernate JPA ORM.",
+            "Automated data movement with Oracle Data Integrator (ODI).",
+            "Integrated S3, SQS/SNS, ALBs, and implemented unit/integration testing.",
+            "Built Python automation tools for the AIPOPS team."
+          ],
+          "tech": "Spring Boot, Oracle, MicroStrategy, PL/SQL, ALB, ETL, ODI"
+        },
+        {
+          "company": "SPIRALOGICS INC., Atlanta, GA, US",
+          "duration": "July 2015 – March 2019",
+          "title": "Software Engineer | Team Lead (2018-2019)",
+          "details": [
+            "Led MMSEA Section 111 automation for RREs, ensuring 98% compliance.",
+            "Built backend in Spring Boot and frontend in ReactJS for Broadspire MA Reporter.",
+            "Created/optimized SQL Server stored procedures and T-SQL code.",
+            "Built AngularJS-based ACH transaction tool for US bank accounts.",
+            "Wrote unit and integration tests in JUnit and Selenium."
+          ],
+          "tech": "Java, Spring Boot, AngularJS, SQL Server, SSIS, Selenium, JUnit, TestRail"
+        }
+      ],
+    "education" : [
+    "Maharishi International University, Fairfield, IA – Master of Science in Computer Science (Oct 2022 - Jan 2025)",
+    "Advanced College of Engineering and Management, Lalitpur, Nepal – B.E. in Computer Engineering (2009 - 2013)"
+]
+
+}
+  
